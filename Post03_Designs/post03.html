@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post 3 · Featured Friday · Placement Win</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  :root {
+    --navy:     #1A2B4A;
+    --green:    #3D8168;
+    --green-l:  #4FA181;
+    --off:      #F7F4EF;
+    --white:    #FFFFFF;
+    --navy-55:  #3A4A67;
+  }
+  @page { size: 1080px 1350px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'Inter', sans-serif; font-weight: 400; color: var(--navy); -webkit-font-smoothing: antialiased; line-height: 1.25; }
+  .slide { width: 1080px; height: 1350px; padding: 72px; position: relative; page-break-after: always; overflow: hidden; }
+  .slide:last-child { page-break-after: auto; }
+  .bg-navy { background: var(--navy); color: var(--off); }
+  .bg-off  { background: var(--off);  color: var(--navy); }
+
+  .eyebrow { font-weight: 500; font-size: 20px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); }
+  .bg-navy .eyebrow { color: var(--green-l); }
+
+  .pill { display: inline-block; padding: 12px 24px; background: var(--green); color: var(--white); font-weight: 500; font-size: 18px; letter-spacing: 3px; text-transform: uppercase; border-radius: 32px; }
+
+  .slide-num { position: absolute; top: 72px; right: 72px; font-weight: 500; font-size: 22px; color: var(--green); letter-spacing: 1px; }
+  .bg-navy .slide-num { color: var(--green-l); }
+
+  .mark-watermark { position: absolute; bottom: 64px; right: 72px; width: 72px; height: 72px; opacity: 0.28; }
+  .bg-navy .mark-watermark { opacity: 0.35; }
+
+  .lockup { position: absolute; top: 72px; left: 72px; width: 300px; height: auto; }
+
+  /* === SLIDE 1 Cover === */
+  .cover { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .cover .badge {
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 4px solid var(--green-l);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 48px;
+    font-size: 72px; color: var(--green-l); font-weight: 500;
+  }
+  .cover .hook-line { font-weight: 500; font-size: 108px; letter-spacing: -3px; line-height: 0.98; color: var(--white); }
+  .cover .hook-line .acc { color: var(--green-l); }
+  .cover .sub { margin-top: 48px; font-weight: 400; font-size: 28px; color: var(--off); opacity: 0.75; letter-spacing: -0.2px; max-width: 800px; }
+  .cover .rule { margin-top: 72px; width: 120px; height: 4px; background: var(--green-l); }
+  .cover .swipe { position: absolute; right: 72px; bottom: 72px; font-weight: 500; font-size: 18px; letter-spacing: 4px; color: var(--green-l); text-transform: uppercase; }
+
+  /* === SLIDE 2 Candidate === */
+  .candidate { display: flex; flex-direction: column; justify-content: center; }
+  .candidate .avatar {
+    width: 180px; height: 180px; border-radius: 50%;
+    background: var(--green); margin-bottom: 56px; position: relative;
+  }
+  .candidate .avatar::after {
+    content: ""; position: absolute;
+    left: 50%; top: 40px; transform: translateX(-50%);
+    width: 66px; height: 66px; border-radius: 50%; background: var(--off);
+  }
+  .candidate .avatar::before {
+    content: ""; position: absolute;
+    left: 50%; top: 112px; transform: translateX(-50%);
+    width: 120px; height: 60px; border-radius: 60px 60px 0 0; background: var(--off);
+  }
+  .candidate .label { font-weight: 500; font-size: 28px; color: var(--green); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; }
+  .candidate .desc {
+    font-weight: 500; font-size: 80px; letter-spacing: -2px; line-height: 1.05;
+    color: var(--navy); max-width: 900px;
+  }
+  .candidate .meta { margin-top: 40px; font-size: 30px; color: var(--navy-55); letter-spacing: -0.2px; }
+
+  /* === SLIDE 3 Wants === */
+  .wants { display: flex; flex-direction: column; justify-content: center; }
+  .wants .label { font-weight: 500; font-size: 28px; color: var(--green-l); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 32px; }
+  .wants .headline {
+    font-weight: 500; font-size: 76px; letter-spacing: -2px; line-height: 1.05;
+    color: var(--white); margin-bottom: 80px;
+  }
+  .wants .tiles { display: flex; flex-direction: column; gap: 24px; }
+  .wants .tile {
+    padding: 32px 40px; border: 2px solid var(--green);
+    border-radius: 16px; display: flex; align-items: center; gap: 32px;
+    background: rgba(61, 129, 104, 0.12);
+  }
+  .wants .tile .n {
+    width: 56px; height: 56px; border-radius: 50%; background: var(--green);
+    color: var(--white); font-weight: 600; font-size: 30px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .wants .tile .t {
+    font-weight: 500; font-size: 34px; color: var(--off); letter-spacing: -0.4px;
+    flex: 1;
+  }
+
+  /* === SLIDE 4 Match === */
+  .match { display: flex; flex-direction: column; justify-content: center; }
+  .match .eyebrow { margin-bottom: 28px; }
+  .match .headline {
+    font-weight: 500; font-size: 72px; letter-spacing: -1.8px; line-height: 1.05;
+    color: var(--navy); margin-bottom: 72px;
+  }
+  .match .rows { display: flex; flex-direction: column; gap: 32px; }
+  .match .row {
+    display: flex; align-items: baseline; gap: 40px;
+    padding-bottom: 24px; border-bottom: 1px solid rgba(26, 43, 74, 0.15);
+  }
+  .match .row .k { font-size: 22px; font-weight: 500; color: var(--green); letter-spacing: 3px; text-transform: uppercase; width: 240px; flex-shrink: 0; }
+  .match .row .v { font-weight: 500; font-size: 38px; color: var(--navy); letter-spacing: -0.6px; flex: 1; }
+
+  /* === SLIDE 5 Timeline === */
+  .timeline { display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center; }
+  .timeline .eyebrow { margin-bottom: 40px; color: var(--green-l); }
+  .timeline .prelabel { font-weight: 400; font-size: 32px; color: var(--off); opacity: 0.8; margin-bottom: 32px; letter-spacing: -0.2px; }
+  .timeline .big {
+    font-weight: 500; font-size: 400px; letter-spacing: -14px; line-height: 0.9;
+    color: var(--green-l);
+  }
+  .timeline .unit { margin-top: 24px; font-size: 48px; font-weight: 500; color: var(--white); letter-spacing: -0.8px; }
+  .timeline .sub { margin-top: 48px; font-size: 26px; color: var(--off); opacity: 0.7; max-width: 760px; letter-spacing: -0.2px; }
+
+  /* === SLIDE 6 Outcome === */
+  .outcome { display: flex; flex-direction: column; justify-content: center; }
+  .outcome .eyebrow { margin-bottom: 36px; }
+  .outcome .amount {
+    font-weight: 500; font-size: 220px; letter-spacing: -6px; line-height: 0.95;
+    color: var(--green); white-space: nowrap;
+  }
+  .outcome .adds {
+    margin-top: 32px;
+    font-size: 36px; color: var(--navy-55); font-weight: 500; letter-spacing: -0.4px;
+  }
+  .outcome .adds .sep { color: var(--green); margin: 0 16px; }
+  .outcome .footnote { margin-top: 56px; font-size: 22px; color: var(--navy-55); opacity: 0.7; letter-spacing: -0.1px; }
+
+  /* === SLIDE 7 CTA === */
+  .cta { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .cta .prompt { font-weight: 500; font-size: 74px; letter-spacing: -1.9px; line-height: 1.06; color: var(--white); margin-bottom: 56px; width: 940px; }
+  .cta .prompt .acc { color: var(--green-l); }
+  .cta .action { display: flex; align-items: center; gap: 28px; margin-bottom: 28px; white-space: nowrap; }
+  .cta .dm { font-size: 38px; font-weight: 400; color: var(--off); opacity: 0.9; letter-spacing: -0.2px; }
+  .cta .kw-pill { display: inline-block; padding: 16px 40px; background: var(--green-l); color: var(--navy); border-radius: 48px; font-weight: 600; font-size: 44px; letter-spacing: 5px; }
+  .cta .deliverable { font-size: 28px; font-weight: 400; color: var(--off); opacity: 0.75; margin-top: 8px; letter-spacing: -0.2px; width: 900px; }
+  .cta .handle { position: absolute; bottom: 72px; left: 72px; font-size: 22px; letter-spacing: 2px; color: var(--off); opacity: 0.7; text-transform: uppercase; font-weight: 500; }
+  .cta .site { position: absolute; bottom: 72px; right: 72px; font-size: 22px; letter-spacing: 1px; color: var(--green-l); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 Cover -->
+<section class="slide bg-navy cover">
+  <img class="lockup" src="file:///sessions/blissful-sleepy-planck/mnt/AussieTechTalent/BrandKit/aussietechtalent_logo_pack/transparent/AussieTechTalent_Logo_Horizontal_Light.svg">
+  <div style="margin-top: 220px;">
+    <span class="pill">Featured Friday</span>
+    <div class="hook-line" style="margin-top: 48px;">
+      Another one<br><span class="acc">placed.</span>
+    </div>
+    <div class="sub">Senior backend engineer · remote fintech placement.</div>
+    <div class="rule"></div>
+  </div>
+  <div class="swipe">Swipe the story →</div>
+</section>
+
+<!-- SLIDE 2 Candidate -->
+<section class="slide bg-off candidate">
+  <div class="slide-num">1 / 5</div>
+  <div class="avatar"></div>
+  <div class="label">The candidate</div>
+  <div class="desc">Senior Go &amp; Python engineer.</div>
+  <div class="meta">8 years' experience · quietly looking.</div>
+  <img class="mark-watermark" src="file:///sessions/blissful-sleepy-planck/mnt/AussieTechTalent/BrandKit/aussietechtalent_logo_pack/transparent/AussieTechTalent_Mark_Navy.svg">
+</section>
+
+<!-- SLIDE 3 Wants -->
+<section class="slide bg-navy wants">
+  <div class="slide-num">2 / 5</div>
+  <div class="label">What they wanted</div>
+  <div class="headline">Three non-negotiables.</div>
+  <div class="tiles">
+    <div class="tile"><div class="n">1</div><div class="t">Remote-first, for good.</div></div>
+    <div class="tile"><div class="n">2</div><div class="t">Meaningful equity.</div></div>
+    <div class="tile"><div class="n">3</div><div class="t">Zero legacy PHP.</div></div>
+  </div>
+  <img class="mark-watermark" src="file:///sessions/blissful-sleepy-planck/mnt/AussieTechTalent/BrandKit/aussietechtalent_logo_pack/transparent/AussieTechTalent_Mark_Light.svg">
+</section>
+
+<!-- SLIDE 4 Match -->
+<section class="slide bg-off match">
+  <div class="slide-num">3 / 5</div>
+  <div class="eyebrow">The match</div>
+  <div class="headline">All three, one offer.</div>
+  <div class="rows">
+    <div class="row"><div class="k">Company</div><div class="v">Series B fintech</div></div>
+    <div class="row"><div class="k">Work mode</div><div class="v">Fully remote, Australia-wide</div></div>
+    <div class="row"><div class="k">Equity</div><div class="v">ESOP at strike</div></div>
+    <div class="row" style="border-bottom: none;"><div class="k">Stack</div><div class="v">Go · Python · AWS · no legacy</div></div>
+  </div>
+  <img class="mark-watermark" src="file:///sessions/blissful-sleepy-planck/mnt/AussieTechTalent/BrandKit/aussietechtalent_logo_pack/transparent/AussieTechTalent_Mark_Navy.svg">
+</section>
+
+<!-- SLIDE 5 Timeline -->
+<section class="slide bg-navy timeline">
+  <div class="slide-num">4 / 5</div>
+  <div style="margin-top: 120px;">
+    <div class="eyebrow">First call to signed offer</div>
+    <div class="prelabel">Days elapsed</div>
+    <div class="big">19</div>
+    <div class="unit">days.</div>
+    <div class="sub">Because we knew the candidate, knew the market, and didn't waste anyone's time with bad matches.</div>
+  </div>
+  <img class="mark-watermark" src="file:///sessions/blissful-sleepy-planck/mnt/AussieTechTalent/BrandKit/aussietechtalent_logo_pack/transparent/AussieTechTalent_Mark_Light.svg">
+</section>
+
+<!-- SLIDE 6 Outcome -->
+<section class="slide bg-off outcome">
+  <div class="slide-num">5 / 5</div>
+  <div class="eyebrow">The outcome</div>
+  <div class="amount">$180k</div>
+  <div class="adds">+ super<span class="sep">·</span>+ 0.15% equity<span class="sep">·</span>+ remote</div>
+  <div class="footnote">Composite account · details modified to protect candidate privacy.</div>
+  <img class="mark-watermark" src="file:///sessions/blissful-sleepy-planck/mnt/AussieTechTalent/BrandKit/aussietechtalent_logo_pack/transparent/AussieTechTalent_Mark_Navy.svg">
+</section>
+
+<!-- SLIDE 7 CTA -->
+<section class="slide bg-navy cta">
+  <img class="lockup" src="file:///sessions/blissful-sleepy-planck/mnt/AussieTechTalent/BrandKit/aussietechtalent_logo_pack/transparent/AussieTechTalent_Logo_Horizontal_Light.svg">
+  <div class="prompt">Hiring your<br><span class="acc">first engineer?</span></div>
+  <div class="action">
+    <span class="dm">DM</span>
+    <span class="kw-pill">'FIRST'</span>
+  </div>
+  <div class="deliverable">for the first-engineer hiring playbook we used.</div>
+  <div class="handle">@aussietechtalent</div>
+  <div class="site">aussietechtalent.com.au</div>
+</section>
+
+</body>
+</html>
